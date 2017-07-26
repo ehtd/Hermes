@@ -8,19 +8,19 @@
 
 import Foundation
 
-class Fetcher: Fetchable {
+open class Fetcher: Fetchable {
 
-    typealias responseType = Any
+    public typealias responseType = Any
 
     let connector: HttpConnector
     let apiEndPoint: String
 
-    init(with session: URLSession, apiEndPoint: String) {
+    public init(with session: URLSession, apiEndPoint: String) {
         self.connector = HttpConnector(with: session)
         self.apiEndPoint = apiEndPoint
     }
 
-    func fetch(_ segment: String, success: @escaping ((responseType) -> Void), error: @escaping ((Error) -> Void)) {
+    public func fetch(_ segment: String, success: @escaping ((responseType) -> Void), error: @escaping ((Error) -> Void)) {
         connector
             .onSuccess(success: success)
             .onError(error: error)
