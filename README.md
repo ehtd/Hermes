@@ -15,6 +15,12 @@ The main item to use is the `Fetcher` in the `Fetcher.swift` file. Its only resp
 Gist "https://gist.github.com/ehtd/4606eba95ef43965251617e1290a159d.js"
 
 ```swift
+// Import Hermes module
+import Hermes
+.
+.
+.
+
 // Keep in class scope
 fileprivate let fetcher: Fetcher
 
@@ -42,7 +48,7 @@ func getContent() {
     // Content retrieved
     print(response)
   }, error: { (error) in
-    // something failed
+    // Something failed
     print(error)
   })
 }
@@ -51,6 +57,19 @@ func getContent() {
 Take a look at `FetcherTests.swift` for more examples on how to use it.
 
 ### Using with Carthage
+1. Create a `cartfile` with the content:
+```
+github "https://github.com/ehtd/Hermes" ~> 1.0
+```
+
+2. Add Copy framework phase to your target
+
+    Shell: `/usr/local/bin/carthage copy-frameworks`
+
+    Input files:`$(SRCROOT)/Carthage/Build/iOS/Hermes.framework`
+
+    Output files:`$(DERIVED_FILE_DIR)/Hermes.framework`
+
 
 Check [Carthage](https://github.com/Carthage/Carthage) for additional setup information.
 
