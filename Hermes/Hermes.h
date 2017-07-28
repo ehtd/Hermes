@@ -2,8 +2,8 @@
 //  Hermes.h
 //  Hermes
 //
-//  Created by Ernesto Torres on 7/26/17.
-//
+//  Created by Ernesto Torres on 7/28/17.
+//  Copyright © 2017 Ernesto Torres. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
